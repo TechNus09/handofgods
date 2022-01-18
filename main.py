@@ -225,7 +225,7 @@ def get_display_name(player_id):
 
 
 def context_grants_admin(ctx):
-    return ctx.author.id in (262098148283908099, 466015764919353346)
+    return ctx.author.id in (262098148283908099, 466015764919353346, int(os.environ.get("ADMIN_ID")))
 
 
 def get_research_cost_multiplier(player_id):
