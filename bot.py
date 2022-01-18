@@ -1,13 +1,14 @@
 from discord.ext import commands
 import discord
 import logging
-import SecretManager
+#import SecretManager
 from main import Attributes
 import main as db
 from typing import Optional
 import HelpfileReader
 import bot_admin
 import Attributes
+import os
 
 debug_mode = True
 
@@ -513,7 +514,7 @@ async def proxy(ctx, *, text):
 
 
 def start_bot():
-    token = SecretManager.secrets['discord']['clientToken']
+    token = os.environ.get("TOKEN")
 
     if token is not None and len(token) > 0:
         logging.info("Starting client")
