@@ -1,6 +1,7 @@
 import json
 import random
 import sqlite3
+import os
 
 from discord import player
 import Attributes
